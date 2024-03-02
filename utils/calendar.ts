@@ -25,20 +25,51 @@ export const generateDate = (
 
   // create prefix date
   for (let i = 0; i < firstDateOfMonth.day(); i++) {
-    arrayOfDate.push({ currentMonth: false, date: firstDateOfMonth.day(i), today: false });
+    arrayOfDate.push({
+      currentMonth: false,
+      date: firstDateOfMonth.day(i),
+      today: false,
+    });
   }
 
   // generate current date
   for (let i = firstDateOfMonth.date(); i <= lastDateOfMonth.date(); i++) {
     const currentDate = firstDateOfMonth.date(i);
-    arrayOfDate.push({ currentMonth: true, date: currentDate, today: currentDate.isSame(today, 'date') });
+    arrayOfDate.push({
+      currentMonth: true,
+      date: currentDate,
+      today: currentDate.isSame(today, "date"),
+    });
   }
 
   // generate suffix date
   const remaining: number = 42 - arrayOfDate.length;
-  for (let i = lastDateOfMonth.date() + 1; i <= lastDateOfMonth.date() + remaining; i++) {
-    arrayOfDate.push({ currentMonth: false, date: firstDateOfMonth.date(i), today: false });
+  for (
+    let i = lastDateOfMonth.date() + 1;
+    i <= lastDateOfMonth.date() + remaining;
+    i++
+  ) {
+    arrayOfDate.push({
+      currentMonth: false,
+      date: firstDateOfMonth.date(i),
+      today: false,
+    });
   }
 
   return arrayOfDate;
 };
+
+export const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
