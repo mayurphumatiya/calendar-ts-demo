@@ -12,6 +12,10 @@ export default function Home() {
 
   const [today, setToday] = useState(currentDate);
 
+  useEffect(()=>{
+    dayjs();
+  },[])
+
   const nextMonth = () => {
     setToday(today.month(today.month() + 1));
   };
