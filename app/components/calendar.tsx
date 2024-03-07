@@ -110,7 +110,7 @@ export default function Calendar({
   return (
     <>
       <div
-        className="flex h-full w-full justify-center mt-4"
+        className="flex h-full w-full justify-center py-4"
         style={containerStyle}
       >
         <div className="lg:w-[80%] h-full w-full">
